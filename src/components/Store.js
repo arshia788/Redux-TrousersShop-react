@@ -5,8 +5,7 @@ import { Data } from '../data';
 import { useSelector, useDispatch } from 'react-redux';
 import { add } from '../redux/cartAction';
 
-// campo
-import Cart from './shared/Cart';
+import {splitNum} from '../func';
 
 function Store() {
 
@@ -32,7 +31,7 @@ function Store() {
                 <button onClick={() => dispatch(add(item))}>add-cart</button>
                 <div>
                   <p>{item.title}</p>
-                  <p>{item.price}  $</p>
+                  <p>{splitNum(item.price)}  $</p>
                 </div>
 
               </div>

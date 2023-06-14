@@ -1,28 +1,28 @@
 
 const add=(item)=>{
     return{
-        type:'add',
+        type:'ADD',
         payload:item
     }
 }
 
 const removeItem=(item)=>{
     return{
-        type:'remove',
+        type:'REMOVE',
         payload:item
     }
 }
 
 const increase=(item)=>{
     return{
-        type:'increase',
+        type:'INCREASE',
         payload:item
     }
 }
 
 const decrease=(item)=>{
     return{
-        type:'decrease',
+        type:'DECREASE',
         payload:item
     }
 }
