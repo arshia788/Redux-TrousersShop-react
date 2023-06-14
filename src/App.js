@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import { Data } from './data';
+
+// compo
+import Navbar from './components/Navbar';
+import Store from './components/Store';
+import Cart from './components/shared/Cart';
+
 
 function App() {
 
@@ -8,13 +15,10 @@ function App() {
 
   return (
     <div>
-        {
-          products.map(item=> {
-            return(
-              <img key={item.id} src={item.image}/>
-            )
-          })
-        }
+        <Switch>
+          <Route path='/' component={Store}/>
+          <Route path='/cart' component={Cart}/>
+        </Switch>
     </div>
   )
 }
