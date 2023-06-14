@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div>
+        <Navbar />
         <Switch>
           <Route path='/' component={Store}/>
           <Route path='/cart' component={Cart}/>
