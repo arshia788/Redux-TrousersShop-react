@@ -9,8 +9,7 @@ import { Data } from './data';
 // compo
 import Navbar from './components/Navbar';
 import Store from './components/Store';
-import Cart from './components/shared/Cart';
-
+import Basket from './components/Basket';
 
 function App() {
 
@@ -22,8 +21,8 @@ function App() {
         <Navbar />
 
         <Switch>
+          <Route path='/basket' component={Basket} />
           <Route path='/' component={Store} />
-          <Route path='/cart' component={Cart} />
         </Switch>
 
       </Provider>

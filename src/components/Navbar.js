@@ -13,7 +13,7 @@ function Navbar() {
           <FaHome />
         </Link>
 
-        <Link to='/cart'>
+        <Link to='/basket'>
           <FaShoppingBasket />
         </Link>
 
