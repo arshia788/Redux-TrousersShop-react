@@ -2,13 +2,15 @@ import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import Cart from './shared/Cart';
+// func
+import splitNum from '../func';
+
+import { removeItem } from '../redux/cartAction';
 
 const Basket = () => {
 
     const state = useSelector(state => state)
     const dispatch = useDispatch()
-    console.log(state);
 
     return (
         <div style={{padding:"10px"}}>
@@ -19,13 +21,25 @@ const Basket = () => {
                             key={item.id}
                             className='cart2'>
                             <img src={item.image} />
+                            
+                            
                             <div className='info'>
-                                <div>
                                 <h2>{item.title}</h2>
-                                    <p>{item.title}</p>
-                                    <p>{item.price}  $</p>
+                                <p>price: {splitNum(item.price)} </p>
+                                <p>total: {splitNum(item.qty * item.price)}</p>
+                                <button 
+                                onClick={()=> dispatch({type:'remove', payload:item})}
+                                className='remove'>remove</button>
+                            
+                                <div className='btn'>
+                                    <button >-1</button>
+                                    <span>{item.qty}</span>
+                                    <button>+1</button>
                                 </div>
+
                             </div>
+
+
                         </div>
                     )
                 })

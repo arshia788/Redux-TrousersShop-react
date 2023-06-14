@@ -10,6 +10,10 @@ const reducer= (state=[], action)=>{
                 alert('you have this item in your basket')
             }
             return [...state]
+
+        case "remove":
+            const removeItem= state.filter(item=> item.id !== action.payload.id)
+            return [...removeItem]
     }
 }
 

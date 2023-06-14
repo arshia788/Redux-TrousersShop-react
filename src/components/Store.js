@@ -22,6 +22,7 @@ function Store() {
     <div className='store'>
       {
         products.map((item) => {
+          item.qty=1
           return (
             <div
               key={item.id}
@@ -29,11 +30,11 @@ function Store() {
               <img src={item.image} />
               <div className='info'>
                 <button onClick={() => dispatch(add(item))}>add-cart</button>
-
                 <div>
                   <p>{item.title}</p>
                   <p>{item.price}  $</p>
                 </div>
+
               </div>
             </div>
           )

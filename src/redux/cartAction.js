@@ -6,7 +6,7 @@ const add=(item)=>{
     }
 }
 
-const remove=(item)=>{
+const removeItem=(item)=>{
     return{
         type:'remove',
         payload:item
@@ -27,5 +27,5 @@ const decrease=(item)=>{
     }
 }
 
-export  {add, remove, increase, decrease};
+export  {add, removeItem, increase, decrease};
 
