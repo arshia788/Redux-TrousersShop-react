@@ -1,13 +1,18 @@
 import React from 'react';
 
+import { useSelector, useDispatch } from 'react-redux';
+import {add} from '../../redux/cartAction'
+
 const Cart = ({data}) => {
-    console.log(data);
+
+    const state= useSelector(state=> state)
+    const dispatch= useDispatch()
 
     return (
         <div className='cart'>
             <img src={data.image}/>
             <div className='info'>
-                <button>add-cart</button>
+                <button onClick={()=> dispatch(add(data))}>add-cart</button>
 
                 <div>
                     <p>{data.title}</p>

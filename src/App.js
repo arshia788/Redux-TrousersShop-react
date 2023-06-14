@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import { Provider } from 'react-redux'
+import store from './redux/store';
+
 import { Data } from './data';
 
 // compo
@@ -11,15 +14,19 @@ import Cart from './components/shared/Cart';
 
 function App() {
 
-  const [products, setProducts]= useState(Data);
+  const [products, setProducts] = useState(Data);
 
   return (
     <div>
+      <Provider store={store}>
         <Navbar />
+
         <Switch>
-          <Route path='/' component={Store}/>
-          <Route path='/cart' component={Cart}/>
+          <Route path='/' component={Store} />
+          <Route path='/cart' component={Cart} />
         </Switch>
+
+      </Provider>
     </div>
   )
 }
