@@ -62,7 +62,7 @@ const Basket = () => {
             textAlign:'center', marginTop:'10px'}}>
                 
                 <p style={{fontSize:'1.4rem'}}>
-                    {splitNum(total)} $
+                   total-price : {splitNum(total)} $
 
                 </p>
             </div>
